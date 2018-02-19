@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "../../services/product-service";
 
 @Component({
   selector: 'auction-product-item',
