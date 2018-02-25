@@ -9,7 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ProductService } from './services/product-service';
 import {RouterModule} from '@angular/router';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import ProductDetailComponent from './components/product-detail/product-detail.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import HomeComponent from './components/home/home.component';
@@ -17,12 +17,16 @@ import StarsComponent from './components/stars/stars.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule, ReactiveFormsModule,
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '',                    component: HomeComponent},
       {path: 'products/:productId', component: ProductDetailComponent}
     ]) ],
-  declarations: [ ApplicationComponent,
+  declarations: [
+    ApplicationComponent,
     CarouselComponent,
     FooterComponent,
     NavbarComponent,
