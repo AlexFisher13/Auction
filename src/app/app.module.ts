@@ -8,33 +8,30 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { SearchComponent } from './components/search/search.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { ProductService } from './services/product-service';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import {HomeComponent} from './components/home/home.component';
 import {RouterModule} from '@angular/router';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
+import ProductDetailComponent from './components/product-detail/product-detail.component';
 
 
 @NgModule({
-  declarations: [
-    ApplicationComponent,
+  imports:      [ BrowserModule, ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: '',                    component: HomeComponent},
+      {path: 'products/:productId', component: ProductDetailComponent}
+    ]) ],
+  declarations: [ ApplicationComponent,
     CarouselComponent,
     FooterComponent,
     NavbarComponent,
+    HomeComponent,
+    ProductDetailComponent,
     ProductItemComponent,
     SearchComponent,
-    StarsComponent,
-    ProductDetailComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot([
-      {path: '',                    component: HomeComponent},
-      {path: 'products/:prodTitle', component: ProductDetailComponent}
-    ])
-  ],
-  providers: [ProductService,
+    StarsComponent],
+  providers:    [ProductService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [ApplicationComponent]
+  bootstrap:    [ ApplicationComponent ]
 })
 export class AppModule { }
