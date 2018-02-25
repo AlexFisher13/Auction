@@ -6,7 +6,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { SearchComponent } from './components/search/search.component';
-import { StarsComponent } from './components/stars/stars.component';
 import { ProductService } from './services/product-service';
 import {RouterModule} from '@angular/router';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
@@ -14,6 +13,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import ProductDetailComponent from './components/product-detail/product-detail.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import HomeComponent from './components/home/home.component';
+import StarsComponent from './components/stars/stars.component';
 
 
 @NgModule({
