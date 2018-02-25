@@ -8,11 +8,12 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { SearchComponent } from './components/search/search.component';
 import { StarsComponent } from './components/stars/stars.component';
 import { ProductService } from './services/product-service';
-import {HomeComponent} from './components/home/home.component';
 import {RouterModule} from '@angular/router';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import ProductDetailComponent from './components/product-detail/product-detail.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import HomeComponent from './components/home/home.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import ProductDetailComponent from './components/product-detail/product-detail.c
     ProductDetailComponent,
     ProductItemComponent,
     SearchComponent,
-    StarsComponent],
+    StarsComponent,
+    FilterPipe],
   providers:    [ProductService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap:    [ ApplicationComponent ]
