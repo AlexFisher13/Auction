@@ -13,7 +13,7 @@ export default class ProductDetailComponent implements OnInit {
 
   constructor(route: ActivatedRoute, productService: ProductService) {
 
-    let prodId: number = parseInt(route.snapshot.params['productId'], 10);
+    const prodId: number = parseInt(route.snapshot.params['productId'], 10);
     this.product = productService.getProductById(prodId);
 
     this.reviews = productService.getReviewsForProduct(this.product.id);
